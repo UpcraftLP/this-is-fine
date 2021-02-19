@@ -14,6 +14,23 @@
       }
     }
   ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/this-is-fine",
+    "issues": "https://github.com/UpcraftLP/this-is-fine/issues",
+    "sources": "https://github.com/UpcraftLP/this-is-fine"
+  },
+  "contributors": [
+    {
+      "name": "Sekwah41",
+      "contact": {
+        "discord": "https://discord.sekwah.com",
+        "email": "contact@sekwah.com",
+        "github": "sekwah41",
+        "homepage": "https://sekwah.com",
+        "twitter": "@sekwah"
+      }
+    }
+  ],
   "icon": "assets/this_is_fine/icon.png",
   "environment": "*",
   "version": "${version}",
