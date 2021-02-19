@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "this_is_fine",
+  "name": "This is fine",
+  "description": "Everything's fine, I-.. I promise!",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "UpcraftLP",
+      "contact": {
+        "github": "UpcraftLP",
+        "homepage": "https://upcraft.dev",
+        "twitter": "@UpcraftLP"
+      }
+    }
+  ],
+  "icon": "assets/this_is_fine/icon.png",
+  "environment": "*",
+  "version": "${version}",
+  "depends": {
+    "fabric": "^0.30.0",
+    "mesh": "^0.6.0",
+    "fiblib": "^0.1.6",
+    "fabricloader": "^0.11.0",
+    "minecraft": "~1.16.0-0"
+  },
+  "entrypoints": {
+    "main": [
+      "dev.upcraft.isfine.ThisIsFine"
+    ],
+    "client": [
+      "dev.upcraft.isfine.client.ClientIsFine"
+    ]
+  },
+  "mixins": [
+    "mixins.this_is_fine.json"
+  ]
+}

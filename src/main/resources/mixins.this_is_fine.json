@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.upcraft.isfine.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "client.EntityMixin",
+    "client.EntityRenderDispatcherMixin",
+    "client.EntityRendererMixin",
+    "client.IngameOverlayRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
