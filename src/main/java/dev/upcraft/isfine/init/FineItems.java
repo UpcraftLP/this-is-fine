@@ -23,15 +23,14 @@
 package dev.upcraft.isfine.init;
 
 import dev.upcraft.isfine.ThisIsFine;
+import dev.upcraft.isfine.item.ShadesItem;
 import io.github.glasspane.mesh.api.annotation.AutoRegistry;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.util.Rarity;
 
 @AutoRegistry.Register(value = Item.class, modid = ThisIsFine.MODID, registry = "item")
 public class FineItems {
 
-    public static final Item SHADES = new ArmorItem(ArmorMaterials.CHAIN, EquipmentSlot.HEAD, new Item.Settings().group(ItemGroup.COMBAT));
+    public static final Item SHADES = new ShadesItem(new Item.Settings().fireproof().rarity(Rarity.EPIC).group(ItemGroup.COMBAT));
 }
