@@ -24,6 +24,7 @@ package dev.upcraft.isfine;
 
 import dev.hephaestus.fiblib.FibLib;
 import dev.hephaestus.fiblib.blocks.BlockFib;
+import dev.upcraft.isfine.init.FineItems;
 import io.github.glasspane.mesh.api.annotation.CalledByReflection;
 import io.github.glasspane.mesh.api.logging.MeshLoggerFactory;
 import net.fabricmc.api.ModInitializer;

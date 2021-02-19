@@ -20,8 +20,9 @@
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
  * OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package dev.upcraft.isfine;
+package dev.upcraft.isfine.init;
 
+import dev.upcraft.isfine.ThisIsFine;
 import io.github.glasspane.mesh.api.annotation.AutoRegistry;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
