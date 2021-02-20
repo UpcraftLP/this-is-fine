@@ -51,30 +51,14 @@ public class ThisIsFine implements ModInitializer {
         return player != null && player.getEquippedStack(EquipmentSlot.HEAD).getItem() == FineItems.SHADES;
     }
 
+    public static Logger getLogger() {
+        return logger;
+    }
+
     @Override
     public void onInitialize() {
         //TODO switch to tag-based hiding of blocks
         //ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new FineReloadListener());
         Stream.of(Blocks.FIRE, Blocks.SOUL_FIRE).forEach(block -> BlockFibRegistry.register(BlockFib.builder(block, Blocks.AIR).withCondition(ThisIsFine::shouldHideFireFor).build()));
-                "{}\n" +
-                "FROM: <Minecraft>\n" +
-                "SENT: {}\n" +
-                "TO: <YOU>\n" +
-                "SUBJECT: Fire!\n" +
-                "\n" +
-                "\n" +
-                "Dear Sir/Madam,\n" +
-                "\n" +
-                "Fire! Fire! Help me!\n" +
-                "123 Carenden Road\n" +
-                "\n" +
-                "Looking forward to hearing from you\n" +
-                "All the best, Maurice Moss\n" +
-                "\n" +
-                "{}", spacer, Instant.now(), spacer);
-        // @formatter:on
-        registerFib(Blocks.FIRE);
-        registerFib(Blocks.SOUL_FIRE);
-    }
     }
 }

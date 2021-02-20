@@ -29,12 +29,35 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderingRegistry;
+import net.minecraft.client.MinecraftClient;
+
+import java.time.Instant;
 
 @Environment(EnvType.CLIENT)
 @CalledByReflection
 public class ClientIsFine implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
+        // @formatter:off
+        String spacer = "--------------------------";
+        ThisIsFine.getLogger().info("\n" +
+                "{}\n" +
+                "FROM: <Minecraft>\n" +
+                "SENT: {}\n" +
+                "TO: <{}@{}>\n" +
+                "SUBJECT: Fire!\n" +
+                "\n" +
+                "\n" +
+                "Dear Sir/Madam,\n" +
+                "\n" +
+                "Fire! Fire! Help me!\n" +
+                "123 Carenden Road\n" +
+                "\n" +
+                "Looking forward to hearing from you\n" +
+                "All the best, Maurice Moss\n" +
+                "\n" +
+                "{}", spacer, MinecraftClient.getInstance().getSession().getUsername(), MinecraftClient.getInstance().getSession().getUuid(), Instant.now(), spacer);
+        // @formatter:on
         ArmorRenderingRegistry.registerSimpleTexture(ThisIsFine.id("shades"), FineItems.SHADES);
     }
 }
