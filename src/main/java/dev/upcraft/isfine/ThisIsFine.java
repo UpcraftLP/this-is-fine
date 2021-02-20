@@ -22,14 +22,12 @@
  */
 package dev.upcraft.isfine;
 
-import dev.hephaestus.fiblib.FibLib;
-import dev.hephaestus.fiblib.blocks.BlockFib;
+import dev.hephaestus.fiblib.api.BlockFib;
+import dev.hephaestus.fiblib.api.BlockFibRegistry;
 import dev.upcraft.isfine.init.FineItems;
 import io.github.glasspane.mesh.api.annotation.CalledByReflection;
 import io.github.glasspane.mesh.api.logging.MeshLoggerFactory;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
@@ -37,7 +35,7 @@ import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 
-import java.time.Instant;
+import java.util.stream.Stream;
 
 @CalledByReflection
 public class ThisIsFine implements ModInitializer {
@@ -55,9 +53,9 @@ public class ThisIsFine implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        // @formatter:off
-        String spacer = "--------------------------";
-        logger.info("\n" +
+        //TODO switch to tag-based hiding of blocks
+        //ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new FineReloadListener());
+        Stream.of(Blocks.FIRE, Blocks.SOUL_FIRE).forEach(block -> BlockFibRegistry.register(BlockFib.builder(block, Blocks.AIR).withCondition(ThisIsFine::shouldHideFireFor).build()));
                 "{}\n" +
                 "FROM: <Minecraft>\n" +
                 "SENT: {}\n" +
@@ -78,12 +76,5 @@ public class ThisIsFine implements ModInitializer {
         registerFib(Blocks.FIRE);
         registerFib(Blocks.SOUL_FIRE);
     }
-
-    private static void registerFib(Block toHide) {
-        toHide.getStateManager().getStates().forEach(ThisIsFine::registerFib);
-    }
-
-    private static void registerFib(BlockState toHide) {
-        FibLib.Blocks.register(new BlockFib(toHide, Blocks.AIR.getDefaultState(), ThisIsFine::shouldHideFireFor));
     }
 }

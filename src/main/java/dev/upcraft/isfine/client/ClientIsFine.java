@@ -22,8 +22,8 @@
  */
 package dev.upcraft.isfine.client;
 
-import dev.upcraft.isfine.init.FineItems;
 import dev.upcraft.isfine.ThisIsFine;
+import dev.upcraft.isfine.init.FineItems;
 import io.github.glasspane.mesh.api.annotation.CalledByReflection;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
